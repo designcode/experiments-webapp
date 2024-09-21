@@ -2,9 +2,8 @@ import { Injectable } from '@angular/core';
 
 @Injectable()
 export class MemoryStorageService {
-  private items: {
-    [key: string]: any;
-  } = {};
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  private items: Record<string, any> = {};
 
   clear() {
     this.items = {};

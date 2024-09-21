@@ -5,7 +5,7 @@ import { MemoryStorageService } from './memory-storage.service';
 
 interface StorageFeature<KindT extends StorageFeatureKind> {
   kind: KindT;
-  providers: Array<Provider>;
+  providers: Provider[];
 }
 
 enum StorageFeatureKind {
@@ -25,7 +25,7 @@ export function withLocalStorage(): StorageFeature<StorageFeatureKind.WithLocalS
 }
 
 export function provideStorage(
-  ...storageOptions: Array<StorageFeature<StorageFeatureKind>>
+  ...storageOptions: StorageFeature<StorageFeatureKind>[]
 ): Provider {
   return [
     {

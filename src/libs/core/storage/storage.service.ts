@@ -1,5 +1,4 @@
-import { Injectable, forwardRef } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Injectable } from '@angular/core';
 import { MemoryStorageService } from './memory-storage.service';
 
 @Injectable()
@@ -36,6 +35,7 @@ export abstract class StorageService
 
       return retrievedItemValue === testItemValue;
     } catch (error) {
+      console.error({ error });
       return false;
     }
   }

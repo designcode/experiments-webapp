@@ -1,7 +1,7 @@
-import { Injectable, Signal, forwardRef, inject } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { StorageService } from './storage.service';
 import { WINDOW } from '@shared/tokens';
-import { Observable, of } from 'rxjs';
+import { of } from 'rxjs';
 
 @Injectable()
 export class LocalStorageService extends StorageService {
@@ -20,14 +20,14 @@ export class LocalStorageService extends StorageService {
 
     if (item) {
       try {
-        const parsedItem = JSON.parse(item);
+        const parsedItem = JSON.parse(item) as T;
 
         return parsedItem;
       } catch {
-        return undefined;
+        return null;
       }
     }
 
-    return undefined;
+    return null;
   }
 }
