@@ -27,7 +27,8 @@
     "paths": {
       "@core/*": ["src/libs/core/*"],
       "@shared/*": ["src/libs/shared/*"],
-      "@ui/*": ["src/libs/ui/*"]
+      "@ui/*": ["src/libs/ui/*"],
+      "@todo/shell": ["src/libs/todo/shell/index.ts"]
     }
   },
   "angularCompilerOptions": {
