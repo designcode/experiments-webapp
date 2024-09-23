@@ -28,7 +28,8 @@
       "@core/*": ["src/libs/core/*"],
       "@shared/*": ["src/libs/shared/*"],
       "@ui/*": ["src/libs/ui/*"],
-      "@todo/shell": ["src/libs/todo/shell/index.ts"]
+      "@todo/shell": ["src/libs/todo/shell/index.ts"],
+      "@todo/feature-list": ["src/libs/todo/feature-list/index.ts"]
     }
   },
   "angularCompilerOptions": {
