@@ -1,7 +1,11 @@
 import { Routes } from '@angular/router';
-import { DesignSystemComponent } from '@ui/components';
+import { DesignSystemComponent, LayoutComponent } from '@ui/components';
 
 export const routes: Routes = [
+  {
+    path: '',
+    component: LayoutComponent,
+  },
   {
     path: 'design-system',
     loadComponent: () => DesignSystemComponent,
