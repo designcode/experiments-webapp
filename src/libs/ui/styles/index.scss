@@ -1,3 +1,6 @@
+@import 'typography';
+@import 'form';
+
 @mixin init($bootstrapTailWind: false) {
 	@if $bootstrapTailWind {
 		@at-root {
@@ -6,4 +9,11 @@
 			@tailwind utilities;
 		}
 	}
+
+  html {
+    @apply bg-dark-shade;
+  }
+
+  @include init-typography;
+  @include init-form;
 }

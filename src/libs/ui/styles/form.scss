@@ -1,0 +1,29 @@
+@mixin init-form() {
+  fieldset {
+    @apply block;
+    @apply mb-5;
+  }
+
+  label {
+    @apply block text-xs mb-2 uppercase font-bold;
+  }
+
+  input[type="text"],
+  textarea,
+  select {
+    @apply border border-light-accent p-2 rounded w-full;
+  }
+
+  button,
+  input[type="button"] {
+    @apply border-0 py-2 px-3 rounded;
+
+    &.primary {
+      @apply bg-dark-shade text-light-shade;
+    }
+
+    &.secondary {
+      @apply bg-dark-accent text-dark-shade;
+    }
+  }
+}

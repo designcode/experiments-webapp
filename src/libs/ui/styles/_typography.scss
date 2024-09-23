@@ -1,0 +1,48 @@
+@mixin init-typography() {
+  * {
+    @apply text-dark-shade;
+    @apply font-sans;
+  }
+
+  a {
+    @apply text-dark-shade;
+  }
+
+  p {
+    @apply mb-5;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-bold;
+    @apply mb-5;
+  }
+
+  h1 {
+    @apply text-5xl;
+  }
+
+  h2 {
+    @apply text-4xl;
+  }
+
+  h3 {
+    @apply text-3xl;
+  }
+
+  h4 {
+    @apply text-2xl;
+  }
+
+  h5 {
+    @apply text-xl;
+  }
+
+  h6 {
+    @apply text-lg;
+  }
+}
