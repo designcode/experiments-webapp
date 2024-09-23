@@ -1,0 +1,9 @@
+@mixin init($bootstrapTailWind: false) {
+	@if $bootstrapTailWind {
+		@at-root {
+			@tailwind base;
+			@tailwind components;
+			@tailwind utilities;
+		}
+	}
+}
