@@ -1,5 +1,5 @@
 @mixin init-typography() {
-  * {
+  > * {
     @apply text-dark-shade;
     @apply font-sans;
   }
