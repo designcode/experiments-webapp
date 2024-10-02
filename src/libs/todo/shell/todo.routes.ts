@@ -6,4 +6,9 @@ export const todoRoutes: Routes = [
     loadChildren: () =>
       import('@todo/feature-list').then(({ todoListRoutes }) => todoListRoutes),
   },
+  {
+    path: 'edit',
+    loadChildren: () =>
+      import('@todo/feature-edit').then(({ todoEditRoutes }) => todoEditRoutes),
+  },
 ];

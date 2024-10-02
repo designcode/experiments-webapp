@@ -30,7 +30,8 @@
       "@ui/*": ["src/libs/ui/*"],
       "@todo/shell": ["src/libs/todo/shell/index.ts"],
       "@todo/data-access": ["src/libs/todo/data-access/index.ts"],
-      "@todo/feature-list": ["src/libs/todo/feature-list/index.ts"]
+      "@todo/feature-list": ["src/libs/todo/feature-list/index.ts"],
+      "@todo/feature-edit": ["src/libs/todo/feature-edit/index.ts"]
     }
   },
   "angularCompilerOptions": {

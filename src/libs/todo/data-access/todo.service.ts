@@ -16,7 +16,7 @@ export class TodoService {
   }
 
   saveTodo(todo: Omit<TodoItem, 'id' | 'changeLog'>) {
-    const todoWithId = { id: new Date().getTime(), changeLog: {}, ...todo };
+    const todoWithId = { changeLog: {}, ...todo, id: new Date().getTime() };
 
     this.storageService.setItem<TodoItem[]>(this.storageKey, [
       ...this.getTodos(),
@@ -33,14 +33,20 @@ export class TodoService {
         ...todo,
         changeLog:
           todo.status !== todoToEdit.status
-            ? { ...todoToEdit.changeLog, [todo.status]: new Date() }
+            ? { ...todoToEdit.changeLog, [todo.status]: new Date().getTime() }
             : todoToEdit.changeLog,
       };
 
-      this.storageService.setItem<TodoItem[]>(this.storageKey, [
-        ...this.todoWithout(id),
-        updatedTodo,
-      ]);
+      this.storageService.setItem<TodoItem[]>(
+        this.storageKey,
+        this.getTodos().map((todo) => {
+          if (todo.id === id) {
+            return updatedTodo;
+          }
+
+          return todo;
+        }),
+      );
     }
   }
 
