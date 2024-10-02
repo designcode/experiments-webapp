@@ -13,15 +13,19 @@
     />
   </fieldset>
 
-  <fieldset>
-    <label for="field">Status</label>
-    <select name="select" [(ngModel)]="todoModel.status">
-      <option value="new">New</option>
-      <option value="progress">In Progress</option>
-      <option value="done">Done</option>
-    </select>
-  </fieldset>
+  @if (isEdit()) {
+    <fieldset>
+      <label for="field">Status</label>
+      <select name="select" [(ngModel)]="todoModel.status">
+        <option value="new">New</option>
+        <option value="progress">In Progress</option>
+        <option value="done">Done</option>
+      </select>
+    </fieldset>
+  }
 
-  <button class="secondary uppercase font-bold text-sm mr-5" (click)="cancel()">Cancel</button>
+  <button class="secondary uppercase font-bold text-sm mr-5" (click)="cancel()">
+    Cancel
+  </button>
   <button class="primary uppercase font-bold text-sm">Save</button>
 </form>

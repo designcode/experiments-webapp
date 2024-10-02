@@ -16,7 +16,11 @@ export class TodoService {
   }
 
   saveTodo(todo: Omit<TodoItem, 'id' | 'changeLog'>) {
-    const todoWithId = { changeLog: {}, ...todo, id: new Date().getTime() };
+    const todoWithId = {
+      ...todo,
+      changeLog: { new: new Date().getTime() },
+      id: new Date().getTime(),
+    };
 
     this.storageService.setItem<TodoItem[]>(this.storageKey, [
       ...this.getTodos(),

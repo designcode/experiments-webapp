@@ -4,5 +4,5 @@ export interface TodoItem {
   id: number;
   name: string;
   status: TodoStatus;
-  changeLog: Partial<Record<TodoStatus, Date>>;
+  changeLog: Partial<Record<TodoStatus, number>>;
 }

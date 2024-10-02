@@ -1,7 +1,7 @@
 import {
   ChangeDetectionStrategy,
   Component,
-  effect,
+  computed,
   inject,
   model,
 } from '@angular/core';
@@ -20,11 +20,12 @@ export class TodoEditComponent {
   private readonly router = inject(Router);
   private readonly todoService = inject(TodoService);
   protected readonly todo = model.required<TodoItem>();
+  protected readonly isEdit = computed(() => this.todo().id !== 0);
 
   saveTodo() {
     const todo = this.todo();
 
-    if (todo.id !== 0) {
+    if (this.isEdit()) {
       this.todoService.updateTodo(todo.id, todo);
     } else {
       this.todoService.saveTodo(todo);

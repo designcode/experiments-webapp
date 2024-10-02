@@ -18,6 +18,10 @@ export class TodoListComponent {
   private readonly todoService = inject(TodoService);
   protected readonly todos = signal(this.todoService.getTodos());
 
+  viewTodo(id: number) {
+    this.router.navigate(['todo/view', id]);
+  }
+
   addTodo() {
     this.router.navigate(['todo/edit']);
   }

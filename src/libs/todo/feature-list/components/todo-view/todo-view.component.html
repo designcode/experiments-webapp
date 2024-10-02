@@ -1,0 +1,33 @@
+<li class="flex flex-row-reverse my-5">
+  <button (click)="goBack()" class="primary font-bold uppercase">
+    Go back
+  </button>
+</li>
+
+<div
+  class="grid items-center p-5 my-2 rounded-lg border hover:border-light-accent hover:bg-light-shade"
+>
+  @if (formattedTodo(); as todo) {
+    <h2>{{ todo.name }}</h2>
+
+    <h5>
+      Current Status
+      <small class="block uppercase text-sm">{{ todo.status }}</small>
+    </h5>
+
+    <h3>Changelog</h3>
+    <ul>
+      @for (
+        changeLog of todo.changeLog;
+        track changeLog;
+        let odd = $odd, even = $even
+      ) {
+        <li>
+          <span class="capitalize">{{ changeLog.key }}</span
+          >:
+          <span>{{ changeLog.value }}</span>
+        </li>
+      }
+    </ul>
+  }
+</div>

@@ -1,6 +1,5 @@
 import { Routes } from '@angular/router';
-import { TodoService } from '@todo/data-access';
-import { todoResolver } from './resolvers/todo.resolver';
+import { TodoService, todoResolver } from '@todo/data-access';
 import { TodoEditComponent } from './components/todo-edit.component';
 
 export const todoEditRoutes: Routes = [

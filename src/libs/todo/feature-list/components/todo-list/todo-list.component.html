@@ -1,12 +1,21 @@
 <ul>
   <li class="flex flex-row-reverse my-5">
-    <button (click)="addTodo()" class="primary font-bold uppercase">Add TODO</button>
+    <button (click)="addTodo()" class="primary font-bold uppercase">
+      Add TODO
+    </button>
   </li>
   @for (todo of todos(); track todo.id; let odd = $odd, even = $even) {
     <li
       class="grid grid-cols-10 items-center gap-5 p-5 my-2 rounded-lg border hover:border-light-accent hover:bg-light-shade"
     >
-      <div class="col-span-6 font-bold">{{ todo.name }}</div>
+      <!-- eslint-disable-next-line @angular-eslint/template/click-events-have-key-events -->
+      <div
+        (click)="viewTodo(todo.id)"
+        tabindex="0"
+        class="col-span-6 font-bold cursor-pointer"
+      >
+        {{ todo.name }}
+      </div>
       <div class="col-span-4 text-right">
         <span
           class="text-xs font-bold uppercase bg-dark-shade text-light-shade px-2 py-1 rounded mr-5"
